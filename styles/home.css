@@ -14,11 +14,11 @@
 
 #cta .title {
   font-size: 4rem;
-  color: #1d1d1d;
+  color: var(--color-neutral-1);
 }
 
 #cta .title span {
-  color: #e9a209;
+  color: var(--color-primary-6);
 }
 
 #cta .description {
@@ -28,11 +28,13 @@
 #cta__buttons {
   display: flex;
   gap: 24px;
+  white-space: nowrap;
 }
 
 #cta__buttons a {
   text-emphasis: none;
-  color: #1d1d1d;
+  color: var(--color-neutral-1);
+  text-decoration: none;
 }
 
 #phone_button {
@@ -51,25 +53,53 @@
 }
 
 #banner {
+  width: 100%;
   display: flex;
-  align-items: start;
-  justify-content: end;
-  width: 70%;
+  justify-content: center; /* CENTRALIZA */
+  align-items: center; /* ALINHA VERTICAL */
+  position: relative;
   z-index: 2;
 }
 
 #banner img {
-  height: 100%;
-  width: fit-content;
+  width: 550px;  
+  height: auto;
+  margin-left: 130px;
 }
 
 .shape {
-  background-color: #ffe8b4;
-  width: 50%;
-  height: 100%;
+  background-color: var(--color-primary-2);
+  width: 650px;
+  height: 650px;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-10%, -50%); /* ajuste fino do posicionamento */
   border-radius: 40% 30% 0 20%;
-  top: 0;
-  right: 0;
   z-index: 1;
+}
+
+@media screen and (max-width: 1170px) {
+  #home {
+    min-height: 100%;
+    padding-top: 0px;
+  }
+
+  #banner,
+  #banner img,
+  #home .shape {
+    display: none;
+  }
+
+  #cta {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #phone_button button {
+    display: none;
+  }
 }
